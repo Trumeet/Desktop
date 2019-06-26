@@ -12,6 +12,8 @@ Feel free to ask me questions in Issues and I'm sure I cannot answer them becaus
 
 * @duangsuse
 
+* [https://github.com/AlphaDelta/Secure-Desktop](https://github.com/AlphaDelta/Secure-Desktop)
+
 * Others
 
 # Licenses
