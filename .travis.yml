@@ -3,13 +3,13 @@ os: windows
 git:
   depth: false
 before_cache:
-  - rm -f  %USERPROFILE%/.gradle/caches/modules-2/modules-2.lock
-  - rm -rf %USERPROFILE%/.gradle/caches/*/plugin-resolution/
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -rf $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-    - "%USERPROFILE%/.gradle/caches/"
-    - "%USERPROFILE%/.gradle/wrapper/"
-    - "%USERPROFILE%/.konan"
+    - "$HOME/.gradle/caches/"
+    - "$HOME/.gradle/wrapper/"
+    - "$HOME/.konan"
 script:
   - choco install jdk8
   - "./gradlew.bat :desktopBinaries"
