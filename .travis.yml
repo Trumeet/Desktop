@@ -1,24 +1,23 @@
-jdk: oraclejdk8
-language: java
+language: shell
+os: windows
 git:
   depth: false
 before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -rf $HOME/.gradle/caches/*/plugin-resolution/
-  - rm -rf $HOME/.konan
+  - rm -f  %USERPROFILE%/.gradle/caches/modules-2/modules-2.lock
+  - rm -rf %USERPROFILE%/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-    - "$HOME/.gradle/caches/"
-    - "$HOME/.gradle/wrapper/"
-    - "$HOME/.konan"
+    - "%USERPROFILE%/.gradle/caches/"
+    - "%USERPROFILE%/.gradle/wrapper/"
+    - "%USERPROFILE%/.konan"
 script:
-  - "chmod +x ./gradlew"
-  - "./gradlew :desktopBinaries"
+  - choco install jdk8
+  - "./gradlew.bat :desktopBinaries"
 before_deploy:
   # TODO: Add this part to the Gradle
   - export VERSION=$(git rev-list --count HEAD)
   - git tag $VERSION
-  - mv "build/bin/desktop/releaseExecutable/Desktop.exe" "./Desktop-$VERSION.exe"
+  - move "build/bin/desktop/releaseExecutable/Desktop.exe" "./Desktop-$VERSION.exe"
 deploy:
   name: ${VERSION}
   prerelease: true
