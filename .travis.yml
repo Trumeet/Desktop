@@ -1,0 +1,30 @@
+jdk: oraclejdk8
+language: java
+git:
+  depth: false
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -rf $HOME/.gradle/caches/*/plugin-resolution/
+  - rm -rf $HOME/.konan
+cache:
+  directories:
+    - "$HOME/.gradle/caches/"
+    - "$HOME/.gradle/wrapper/"
+    - "$HOME/.konan"
+script:
+  - "./gradlew :desktopBinaries"
+before_deploy:
+  # TODO: Add this part to the Gradle
+  - export VERSION=$(git rev-list --count HEAD)
+  - git tag $VERSION
+  - mv "build/bin/desktop/releaseExecutable/Desktop.exe" "./Desktop-$VERSION.exe"
+deploy:
+  name: ${VERSION}
+  prerelease: true
+  provider: releases
+  skip_cleanup: true
+  api_key: $GITHUB_RELEASE_KEY
+  file:
+    - Desktop-$VERSION.exe
+  on:
+    repo: Trumeet/Desktop

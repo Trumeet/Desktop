@@ -1,5 +1,7 @@
 # Desktop
 
+[![Build Status](https://travis-ci.com/Trumeet/Desktop.svg?branch=master)](https://travis-ci.com/Trumeet/Desktop)
+
 A simple Windows Secure Desktop demo written in Kotlin.
 
 It is also a demo for Kotlin Native and Windows APIs.
