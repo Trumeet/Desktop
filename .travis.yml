@@ -10,7 +10,7 @@ before_deploy:
   # TODO: Add this part to the Gradle
   - export VERSION=$(git rev-list --count HEAD)
   - git tag $VERSION
-  - move "build/bin/desktop/releaseExecutable/Desktop.exe" "./Desktop-$VERSION.exe"
+  - mv "build/bin/desktop/releaseExecutable/Desktop.exe" "./Desktop-$VERSION.exe"
 deploy:
   name: ${VERSION}
   prerelease: true
