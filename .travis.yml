@@ -6,6 +6,7 @@ if: branch = master
 script:
   - choco install jdk8
   - export JAVA_HOME='C:\Program Files\Java\jdk1.8.0_211\'
+  - export GRADLE_OPTS="-Dorg.gradle.daemon=false"
   - "./gradlew.bat :desktopBinaries"
 before_deploy:
   # TODO: Add this part to the Gradle
