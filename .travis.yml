@@ -12,6 +12,7 @@ cache:
     - "$HOME/.gradle/wrapper/"
     - "$HOME/.konan"
 script:
+  - "chmod +x ./gradlew"
   - "./gradlew :desktopBinaries"
 before_deploy:
   # TODO: Add this part to the Gradle
