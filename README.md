@@ -14,6 +14,14 @@ Feel free to ask me questions in Issues and I'm sure I cannot answer them becaus
 
 * [https://github.com/AlphaDelta/Secure-Desktop](https://github.com/AlphaDelta/Secure-Desktop)
 
+* [msink/kotlin-ui](https://github.com/msink/kotlin-ui)
+
+* [msink/hello-libui](https://github.com/msink/hello-libui)
+
+* [msink/kotlin-libui](https://github.com/msink/kotlin-libui)
+
+* [libui](https://github.com/andlabs/libui)
+
 * Others
 
 # Licenses
